@@ -14,8 +14,18 @@ class MainView extends StatelessWidget {
     return Container(
         width: width,
         color: const Color.fromARGB(255, 210, 210, 210),
-    );
-  }
+        child: Column(
+          children: [
+            Text('Recept Sök',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+              ),
+            Text('Filtrera bland recept',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+            )
+          ]
+        ),
+      );
+    }
 
   Widget _recipeArea(context) {
     return Expanded(
