@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/model/recipe_database/recipe_handler.dart';
 import 'package:lab2/util/difficulty.dart';
 import 'package:provider/provider.dart';
@@ -20,18 +21,44 @@ class _DifficultyControlState extends State<DifficultyControl> {
     
     return Column(
       children: [
-        for (final label in Difficulty.labels)
-          RadioListTile<String>(
+        
+        RadioListTile<String>(
             dense: true,
-            title: Text(label),
-            value: label,
+            title: Row(children:[
+              Text(
+                Difficulty.showAll)
+                ]
+              ),
+            value: Difficulty.labels[0],
             groupValue: _difficulty,
             onChanged: (value) {
               setState(() {
                 _difficulty = value!;
+                recipeHandler.setDifficulty(value);
                 },
               );
-              recipeHandler.setDifficulty(value);
+            },
+          ),
+
+
+
+        for (int i = 1; i < Difficulty.labels.length; i++)
+          RadioListTile<String>(
+            dense: true,
+            title: Row(
+              children: [
+                Difficulty.icons[i]!, 
+                SizedBox(width: AppTheme.paddingMedium), 
+                Text(Difficulty.labels[i]),
+                ]),
+            value: Difficulty.labels[i],
+            groupValue: _difficulty,
+            onChanged: (value) {
+              setState(() {
+                _difficulty = value!;
+                recipeHandler.setDifficulty(value);
+                },
+              );
             },
           ),  // RadioListTile
         ],

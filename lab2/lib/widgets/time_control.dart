@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
+import 'package:lab2/constants/assets.dart';
 import 'package:lab2/model/recipe_database/recipe_handler.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +31,16 @@ class _TimeControlState extends State<TimeControl> {
             recipeHandler.setMaxTime(value as int);
           },
         ),
-        Text('${_time.round()} minuter'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Image.asset(Assets.timeIcon, height: 16),
+            Padding(
+              padding: const EdgeInsets.only(right: AppTheme.paddingLarge, left: AppTheme.paddingMediumSmall),
+              child: Text('${_time.round()} minuter'),
+            ),
+          ],
+        ),
       ],
     );
   }
