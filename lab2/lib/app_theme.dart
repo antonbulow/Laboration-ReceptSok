@@ -15,4 +15,8 @@ class AppTheme {
            seedColor: Colors.green,     // Välj något som känns bra
    );
    static TextTheme textTheme = GoogleFonts.nunitoTextTheme();
+   static const TextStyle mediumHeading = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w400,
+  );
 }

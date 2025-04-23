@@ -11,9 +11,9 @@ class Difficulty {
 
   static final List<Image?> icons = [
     null,
-    Image.asset(height: 16, Assets.difficultyEasy),
-    Image.asset(height: 16, Assets.difficultyMedium),
-    Image.asset(height: 16, Assets.difficultyHard),
+    Image.asset(height: 48, Assets.difficultyEasy), //height 16 tidigare
+    Image.asset(height: 48, Assets.difficultyMedium),
+    Image.asset(height: 48, Assets.difficultyHard),
   ];
 
   static Image? icon(String difficulty, {double width = 16}) {
