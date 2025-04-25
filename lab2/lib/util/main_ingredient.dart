@@ -13,10 +13,10 @@ class MainIngredient {
 
   static final List<Image?> icons = [
     null,
-    Image.asset(width: 48, Assets.meatIcon), //width 16 tidigare
-    Image.asset(width: 48, Assets.fishIcon),
-    Image.asset(width: 48, Assets.chickenIcon),
-    Image.asset(width: 48, Assets.vegIcon),
+    Image.asset(width: 16, Assets.meatIcon),
+    Image.asset(width: 16, Assets.fishIcon),
+    Image.asset(width: 16, Assets.chickenIcon),
+    Image.asset(width: 16, Assets.vegIcon),
   ];
 
   static Image? icon(String ingredient, {double width = 16}) {
