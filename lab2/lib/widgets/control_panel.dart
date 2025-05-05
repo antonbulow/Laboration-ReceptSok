@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/widgets/difficulty_control.dart';
 import 'package:lab2/widgets/ingredient_control.dart';
 import 'package:lab2/widgets/kitchen_control.dart';
@@ -15,50 +16,76 @@ class ControlPanel extends StatelessWidget {
     return Container(
         width: width,
         color: const Color.fromARGB(255, 210, 210, 210),
-        child: Column(
+        child: 
+        Padding(
+          padding: EdgeInsets.only(left: AppTheme.paddingMedium),
+          child:  
+        Column(
           children: [
             Logo(), 
 
             SizedBox(
-              height: 16
+              height: AppTheme.paddingMedium
             ),
-            
-            Text('Filtrera bland recept',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+
+              Text('Hitta ett recept som passar genom att ändra inställningarna nedanför',
+              style: AppTheme.smallHeading
             ),
             
             SizedBox(
-              height: 16
+              height: AppTheme.paddingMedium
             ),
 
             IngredientControl(),
 
+            SizedBox(height: AppTheme.paddingSmall),
+
             KitchenControl(),
 
             SizedBox(
-              height: 16
+              height: AppTheme.paddingMedium
             ),
 
-            Text('Svårighetsgrad', 
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal)
-                ), 
+            Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('Svårighetsgrad', 
+                  style: AppTheme.smallHeading
+                ),
+              ]
+            ),
+
             DifficultyControl(),
             
-            Text('Maxpris:', 
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal)
+            SizedBox(height: AppTheme.paddingMedium),
+
+            Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('Maxpris:', 
+                style: AppTheme.smallHeading
                 ),
+              ]
+            ),
+
             PriceControl(),
             
             SizedBox(
-              height: 16
+              height: AppTheme.paddingMedium
             ),
 
-            Text('Maxtid:', 
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal)
+            Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('Maxtid:', 
+                style: AppTheme.smallHeading
                 ),
+              ]
+            ),
             TimeControl()
               ]
             ),
-          );
-        }
+          ),
+        );
       }
+    }
