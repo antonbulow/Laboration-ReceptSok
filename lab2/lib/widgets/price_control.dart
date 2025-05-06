@@ -27,7 +27,7 @@ class _PriceControlState extends State<PriceControl> {
             setState(() {
               _price = value;
             });
-            recipeHandler.setMaxPrice(value as int);
+            recipeHandler.setMaxPrice(value.toInt());
           },
         ),
         Row(

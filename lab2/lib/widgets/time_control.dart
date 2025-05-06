@@ -28,7 +28,7 @@ class _TimeControlState extends State<TimeControl> {
             setState(() {
               _time = value;
             });
-            recipeHandler.setMaxTime(value as int);
+            recipeHandler.setMaxTime(value.toInt());
           },
         ),
         Row(
