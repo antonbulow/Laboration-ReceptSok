@@ -86,19 +86,6 @@ class RecipeHandler extends ChangeNotifier {
       var recipe = Recipe.fromJson(data[i]);
       _recipes.add(recipe);
 
-      /*
-      dbugPrint(
-        'Recipe $i: ${recipe.name}, ${recipe.cuisine},  ${recipe.difficulty}, ${recipe.price}kr/portion.',
-      );
-      */
-      /*
-      var ingredients = recipe.ingredients;
-
-      
-      for (final ingredient in ingredients) {
-        dbugPrint('   ${ingredient.toString()}');
-      }
-      */
     }
     var loadOk = recipes.length == 16;
     var message =
@@ -109,70 +96,4 @@ class RecipeHandler extends ChangeNotifier {
     //if (false) _testFiltering();
     notifyListeners();
   }
-
-  /*
-  void _testFiltering() {
-    dbugPrint('Kött');
-    setMainIngredient('Kött');
-
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Frankrike');
-
-    setCuisine('Frankrike');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Fisk');
-    setMainIngredient('Fisk');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Mellan');
-    setDifficulty('Mellan');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Vegetarisk');
-    setMainIngredient('Vegetarisk');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Pris 30');
-    setMaxPrice(30);
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Kyckling');
-    setMainIngredient('Kyckling');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Indien');
-    setCuisine('Indien');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Time 30');
-    setMaxTime(30);
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-
-    dbugPrint('Lätt');
-    setDifficulty('Lätt');
-    for (final r in _matchedRecipes) {
-      dbugPrint('  ${r.name}, match ${r.match}');
-    }
-  }
-  */
 }

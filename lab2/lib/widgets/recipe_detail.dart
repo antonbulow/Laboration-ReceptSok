@@ -17,14 +17,6 @@ class RecipeDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var uiController = Provider.of<UIController>(context, listen: false);
 
-    // return ListView(
-    //   children: [
-    //     IconButton(
-    //     icon: Icon(Icons.close),
-    //     onPressed: () {
-    //       uiController.deselectRecipe();
-    //       },
-    //     ),
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -99,19 +91,5 @@ class RecipeDetail extends StatelessWidget {
     ],
   )
 );
-
-        // SizedBox(
-        //   width: 640,
-        //   height: 480,
-        //   child: recipe.image
-        // ),
-        // Text(recipe.name,
-        // style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
-        // ),
-        // Text(recipe.instruction, 
-        // style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal)
-        // )
-    //   ]
-    // );
   }
 }
